@@ -888,7 +888,8 @@
         var c=raw[i].c||[];
         var nm=(c[1]&&c[1].v!=null)?String(c[1].v).trim():'';
         var ch=(c[2]&&c[2].v!=null)?String(c[2].v).trim():'';
-        if(!nm&&!ch) continue;
+        if(ch!=='A'&&ch!=='B') continue;
+        if(!nm) continue;
         var rec={ts:gvizDate(c[0]), name:nm, choice:(ch==='B'?'B':'A'), why:(c[3]&&c[3].v!=null)?String(c[3].v):''};
         var key=nm.toLowerCase();
         if(!(key in byName)) order.push(key);
