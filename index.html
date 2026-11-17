@@ -900,6 +900,7 @@
       out.sort(function(x,y){ return (y.ts||0)-(x.ts||0); });
       rows=out; loaded=true; renderVotes();
       if(myName) markMine();
+      if(!busy&&msgEl.textContent==='Loading\u2026') setMsg('');
     });
   }
   function markMine(){
